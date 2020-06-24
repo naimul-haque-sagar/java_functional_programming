@@ -9,7 +9,13 @@ public class Optional_Property {
         Person person=new Person("sagar","dhaka");
         System.out.println(person.getAddress().map(String::toUpperCase).orElse("Address not found"));
         person.getName().ifPresent(s-> System.out.println("value is "+s));
-        person.getName().ifPresentOrElse((s)-> System.out.println(s.toUpperCase()),()-> System.out.println("No value found") );
+        person.getName().ifPresent(System.out::println);
+        person.getName()
+                .ifPresentOrElse((s)-> System.out.println(s.toUpperCase()),()-> System.out.println("No value found"));
+
+        System.out.println(person.getName().isPresent());
+        System.out.println(person.getName().isEmpty());
+        System.out.println(person.getAddress().get());
     }
 }
 
