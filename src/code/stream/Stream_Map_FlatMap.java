@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Map_FlatMap {
+public class Stream_Map_FlatMap {
     public static void main(String[] args) {
         //map() example
         List<Integer> list = Arrays.asList(31, 61, 91, 12, 15);
