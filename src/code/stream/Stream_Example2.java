@@ -25,7 +25,7 @@ public class Stream_Example2 {
         Integer[] arr=stream1.toArray(Integer[]::new);
         System.out.println(Arrays.toString(arr));
 
-        int[] s=new int[]{4,5,6,7};
+         int[] s=new int[]{4,5,6,7};
         System.out.println(Arrays.toString(s));
 
         Stream<Integer> stream2=Stream.of(22,33,445,66666,11,2,3,5);
