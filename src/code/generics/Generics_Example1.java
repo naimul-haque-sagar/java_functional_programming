@@ -2,25 +2,23 @@ package code.generics;
 
 import java.lang.reflect.Method;
 
-class Printer
-{
+class Print_Array{
     <T> void printArray(T[] arr){
         for(T x:arr){
             System.out.println(x);
         }
     }
 }
-
-public class Solution {
+public class Generics_Example1 {
     public static void main( String args[] ) {
-        Printer myPrinter = new Printer();
+        Print_Array print_Array = new Print_Array();
         Integer[] intArray = { 1, 2, 3 };
         String[] stringArray = {"Hello", "World"};
-        myPrinter.printArray(intArray);
-        myPrinter.printArray(stringArray);
+        print_Array.printArray(intArray);
+        print_Array.printArray(stringArray);
         int count = 0;
 
-        for (Method method : Printer.class.getDeclaredMethods()) {
+        for (Method method : Print_Array.class.getDeclaredMethods()) {
             String name = method.getName();
 
             if(name.equals("printArray"))

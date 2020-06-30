@@ -1,20 +1,20 @@
-
 package code.generics;
 
-public class GenericMethod {
+class PrintArray {
     <T> void printArray(T[] arr){
         for(T x:arr){
             System.out.println(x);
         }
     }
 }
-class GenericMethod_Example {
+
+public class Generics_Example2 {
     public static void main(String[] args) {
-        GenericMethod g=new GenericMethod();
+        PrintArray printArray=new PrintArray();
         Integer[] intArray = { 1, 2, 3 };
         String[] stringArray = {"Hello", "World"};
-        
-        g.printArray(intArray);
-        g.printArray(stringArray);
+
+        printArray.printArray(intArray);
+        printArray.printArray(stringArray);
     }
 }

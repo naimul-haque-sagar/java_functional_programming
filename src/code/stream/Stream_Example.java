@@ -8,25 +8,25 @@ import java.util.stream.Collectors;
 
 public class Stream_Example {
     public static void main(String[] args) {
-        List<School_Student> list= School_Student.getStudentList();
+        List<Student> list= Student.getStudentList();
         list.forEach(System.out::println);
         list.forEach(student -> System.out.println(student));
 
-        List<School_Student> male=list.stream()
+        List<Student> male=list.stream()
                 .filter(student -> student.getGender().equals(Gender.MALE)).collect(Collectors.toList());
-        List<School_Student> female=list.stream()
+        List<Student> female=list.stream()
                 .filter(student -> student.getGender().equals(Gender.FEMALE)).collect(Collectors.toList());
         System.out.println(male);
         System.out.println(female);
 
-        List<School_Student> age=list.stream().filter(student -> student.getAge()>12).collect(Collectors.toList());
+        List<Student> age=list.stream().filter(student -> student.getAge()>12).collect(Collectors.toList());
         System.out.println(age);
 
         List<Integer> number=Arrays.asList(41,72,3,4);
         System.out.println(number.stream().sorted().collect(Collectors.toList()));
 
-        List<School_Student> sortedList=list.stream()
-                .sorted(Comparator.comparing(School_Student::getAge).reversed().thenComparing(School_Student::getName))
+        List<Student> sortedList=list.stream()
+                .sorted(Comparator.comparing(Student::getAge).reversed().thenComparing(Student::getName))
                 .collect(Collectors.toList());
         sortedList.forEach(System.out::println);
 
@@ -39,19 +39,19 @@ public class Stream_Example {
         boolean noMatch=list.stream().noneMatch(student -> student.getName().equals("sagar"));
         System.out.println(noMatch);
 
-        list.stream().max(Comparator.comparing(School_Student::getAge))
+        list.stream().max(Comparator.comparing(Student::getAge))
                 .ifPresentOrElse(System.out::println,()-> System.out.println("not found"));
-        list.stream().min(Comparator.comparing(School_Student::getAge))
+        list.stream().min(Comparator.comparing(Student::getAge))
                 .ifPresentOrElse(System.out::println,()-> System.out.println("not found"));
 
-        Map<Gender,List<School_Student>> group=list.stream().collect(Collectors.groupingBy(School_Student::getGender));
+        Map<Gender,List<Student>> group=list.stream().collect(Collectors.groupingBy(Student::getGender));
         group.forEach((gender,students)->{
             System.out.println(gender);
             students.forEach(System.out::println);
         });
 
         list.stream().filter(student -> student.getGender().equals(Gender.FEMALE))
-                .max(Comparator.comparing(School_Student::getAge)).map(School_Student::getName)
+                .max(Comparator.comparing(Student::getAge)).map(Student::getName)
                 .ifPresentOrElse(student-> System.out.println("youngest student "+student),()-> System.out.println("not found"));
     }
 }
@@ -100,10 +100,10 @@ class Student{
                 '}';
     }
 
-    public static List<School_Student> getStudentList(){
+    public static List<Student> getStudentList(){
         return Arrays.asList(
-          new School_Student("sagar",15,Gender.MALE),new School_Student("navin",13,Gender.MALE),
-                new School_Student("sumaiya",13,Gender.FEMALE),new School_Student("nitu",8,Gender.FEMALE)
+          new Student("sagar",15,Gender.MALE),new Student("navin",13,Gender.MALE),
+                new Student("sumaiya",13,Gender.FEMALE),new Student("nitu",8,Gender.FEMALE)
         );
     }
 }
