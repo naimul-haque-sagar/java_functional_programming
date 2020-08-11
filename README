@@ -1,0 +1,35 @@
+Java_Functional_Programming
+
+java functional programming best practices --->
+
+Comparator:
+1. Comparator example
+
+Generics:
+1.Generics_Example
+2.Generics_Lowerbound_Wildcards
+3.Generics_Unbound_Wildcard
+4.Generics_Upperbound_Wildcard
+5.Generics_Upperbound_Wildcard
+
+Lambda:
+1.BiFunction_Example
+2.ConstructorReference
+3.Consumer_Example
+4.Lambda
+5.LambdaWithCollection
+6.Local_Variable_Capture
+7.MethodReference
+8.Predicate_Example
+9.Supplier_Example.java
+
+Optional:
+1.Basic
+2.Optional_Array
+3.Optional_Property
+
+Stream:
+1.Stream_Example
+2.Stream_Filter
+3.Stream_MapMethod
+4.Stream_Max_Min
